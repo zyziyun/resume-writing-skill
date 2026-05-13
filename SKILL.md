@@ -32,7 +32,8 @@ When the student arrives with a brain-dump rather than a polished resume, Step 1
 
 - `SKILL.md` — this file (workflow + methodology summary)
 - `resume_template.tex` — LaTeX template (moderncv banking), populated each run
-- `handbook_template.md` — teaching handbook template, filled in each run with this student's specific diagnosis and Before/After
+- `handbook_template_en.md` — **default** English handbook template, filled in each run with this student's specific diagnosis and Before/After
+- `handbook_template.md` — Mandarin handbook template, used only when the student explicitly prefers Chinese
 
 ## Required inputs (block on these before producing output)
 
@@ -54,7 +55,9 @@ Three files, named after the student's last name and target role:
 2. `[LastName]_Resume_[Role].tex` — final resume in LaTeX (moderncv banking)
 3. `[LastName]_Handbook_[Role].md` — personalized teaching handbook based on this resume
 
-The handbook is NOT a static methodology document. It uses the student's own Before/After as case material, flags fatal flaws found on their actual resume, lists keyword coverage against the JDs sampled this run, and gives action items specific to where this student is. **The handbook is calibrated to the student's diagnosed tier — a 9/10 student gets a tight, confidence-confirming handbook; a 2/3 student gets a thick handbook dominated by补经验 recommendations rather than line-by-line rewrites.** Static appendices (verb library, keyword speedrun, checklist, methodology reference) come bundled by default so the student can self-serve future iterations on other role directions.
+The handbook is NOT a static methodology document. It uses the student's own Before/After as case material, flags fatal flaws found on their actual resume, lists keyword coverage against the JDs sampled this run, and gives action items specific to where this student is. **The handbook is calibrated to the student's diagnosed tier — a 9/10 student gets a tight, confidence-confirming handbook; a 2/3 student gets a thick handbook dominated by experience-building recommendations rather than line-by-line rewrites.** Static appendices (verb library, keyword speedrun, checklist, methodology reference) come bundled by default so the student can self-serve future iterations on other role directions.
+
+The handbook works in two reading modes — solo self-serve, or walked through by a coach. The template makes this explicit in its preamble; do NOT add internal references to "your coach" or "in our session" anywhere in the generated content.
 
 ## Workflow
 
@@ -160,16 +163,23 @@ Save the list of `[Needs verification]` flags — they go into the handbook's Pa
 
 ### Step 8 — Generate the personalized handbook (calibrated to tier)
 
-Open `handbook_template.md`. The template defines the MAXIMUM possible structure. For each per-run handbook, **size every dynamic section to what this student actually needs based on their diagnosed tier**.
+Pick the template based on the student's preferred handbook language:
+
+- Default: **`handbook_template_en.md`** (English). Use this unless the student is clearly Mandarin-speaking and prefers Chinese.
+- Mandarin alternative: **`handbook_template.md`**. Use this when the student is a Mandarin speaker AND has not asked for English output.
+
+If unsure, ask once at intake: "Do you want the handbook in English or Mandarin?" Resume content itself always stays English regardless of handbook language.
+
+The selected template defines the MAXIMUM possible structure. For each per-run handbook, **size every dynamic section to what this student actually needs based on their diagnosed tier**.
 
 #### Calibration matrix
 
 | Tier  | Handbook depth         | Part 1 | Part 2 (fatal flaws) | Part 3 (JD coverage) | Part 4 (Before/After) | Part 5 (action items) | Appendices |
 |-------|------------------------|--------|----------------------|----------------------|-----------------------|-----------------------|------------|
 | 9–10  | tight, ~4–6 pages incl. appendices | brief — confirm strengths | usually skipped | always include | 0–2 polish items only | thin; pivots toward career nav | A, B, C kept; D optional |
-| 7–8   | moderate, ~10–15 pages | full diagnosis + 差异化 gap | 1–2 flaws | always include | 2–4 sections | balanced | full |
-| 5–6   | full, ~20–25 pages     | full diagnosis | 3–4 flaws | always include | 4–6 sections | strong on data verify + 关键词补强 | full |
-| 2–3   | full but rebalanced, ~20–30 pages | full + structural diagnosis | 4–5 flaws | full but reframed | thin or skipped — rewriting weak material won't fix it | dominated by 经验补强 (bucket C) | full |
+| 7–8   | moderate, ~10–15 pages | full diagnosis + differentiation gap | 1–2 flaws | always include | 2–4 sections | balanced | full |
+| 5–6   | full, ~20–25 pages     | full diagnosis | 3–4 flaws | always include | 4–6 sections | strong on data verify + keyword fill-in | full |
+| 2–3   | full but rebalanced, ~20–30 pages | full + structural diagnosis | 4–5 flaws | full but reframed | thin or skipped — rewriting weak material won't fix it | dominated by experience-building (bucket C) | full |
 
 #### Skipping rules
 
@@ -189,7 +199,7 @@ Open `handbook_template.md`. The template defines the MAXIMUM possible structure
 | Part 3 (JD + keyword coverage) | Step 2 (cite each JD URL; show before/after coverage tables) |
 | Part 4 (Before/After) | Step 5 (verbatim Before, rewrite After, change table for each rewritten section — only sections actually rewritten) |
 | Part 5 (action items) | Step 6 (verify list) + Step 3 structural-gap diagnosis if any; output only buckets that apply |
-| 附录 B (keyword speedrun) | Pick the role-direction-matching subsection from the template's static keyword library; drop the others |
+| Appendix B (keyword speedrun) | Pick the role-direction-matching subsection from the template's static keyword library; drop the others |
 
 Output filename: `[LastName]_Handbook_[Role].md`
 
@@ -220,9 +230,9 @@ If the student wants a backup or generalist version of the resume, run the skill
 
 ## Output style (chat side)
 
-- Diagnosis and rewrite explanation in chat go in Mandarin Chinese (default for this coach's students).
-- Resume content itself stays in English (US market). No exceptions.
-- Keep technical terms in English even in Mandarin explanation (do not translate "RAG", "A/B testing", "stakeholder", etc.).
+- **Default chat language: English.** Match the student's language if they wrote to you in something else — Mandarin chat output is fine if the student is Mandarin-speaking, but do not assume.
+- **Resume content always stays English** (US market). No exceptions, regardless of chat language.
+- Keep technical terms in English even when chatting in another language (do not translate "RAG", "A/B testing", "stakeholder", etc.).
 - No preachy openers ("Resume writing is an art..."). Lead with diagnosis, then rewrite.
 - No emoji.
 - Don't expose internal tool calls in the final user-facing answer — search and read silently, surface conclusions.

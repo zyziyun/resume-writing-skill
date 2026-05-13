@@ -52,6 +52,15 @@ Resume content stays in English. No internal references to
 > 这份讲义基于你 {{DATE}} 提交的简历生成，结合了今天抓取的 3 份美国市场 {{ROLE_DIRECTION}} 岗位 JD。
 > 配套文件：`{{LastName}}_Resume_{{Role}}.md` 和 `{{LastName}}_Resume_{{Role}}.tex`（你最终的简历）。
 
+### 如何使用这份讲义
+
+这份讲义被设计成在两种场景下都好用：
+
+- **自己看（self-serve）：** 按顺序读。第一部分告诉你简历卡在哪一档，第二部分点名致命问题，第三部分摆出市场真实需求，第四部分用 Before/After 解释每一处改动的方法论，第五部分是你的 action checklist。附录在你以后每次改简历时都仍然有用——把附录 C（一岗一简历 checklist）和附录 D（方法论参考）当成长期 reference 保留下来。
+- **由 coach 带读：** 同样的内容，但 coach 会现场点出 trade-off，告诉你哪些附录条目特别值得背下来。课后回到 self-serve 模式继续 iterate。
+
+不管哪种场景，这份讲义都是你的。半年后经验有更新、或者换目标方向时，重新跑一次 skill 会得到新的诊断和新的简历版本。
+
 <!-- GENERATE:
 A 1-line summary of how to read this handbook, calibrated to tier:
   - Tier 9–10: "你的简历已经在 9/10 区间。这份讲义重点是 keyword 微调和下一步策略。"
