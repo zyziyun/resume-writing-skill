@@ -1,12 +1,22 @@
 # resume-writing-skill
 
-An [Anthropic Claude skill](https://docs.claude.com/en/docs/claude-code/skills) for rewriting US-market job-application resumes. Drop it into Claude Code (or any Claude environment that loads skills from a directory) and it turns a raw resume + a target role into three artifacts: a Markdown resume, a moderncv-banking LaTeX resume, and a personalized teaching handbook calibrated to how strong the resume actually is.
+An [Anthropic Claude skill](https://docs.claude.com/en/docs/claude-code/skills) that turns **either a polished resume or a ~30-page unstructured brain-dump** into a US-market job-application resume. Drop it into Claude Code (or any Claude environment that loads skills from a directory) and it produces three artifacts: a Markdown resume, a moderncv-banking LaTeX resume, and a personalized teaching handbook calibrated to how strong the input actually is.
 
 This was originally a Next.js + AWS Lambda SaaS at `knflow.com/resume-ai`. The skill version replaces it — same coaching methodology, packaged so it runs locally inside your own Claude.
 
+## Recommended workflow
+
+The strongest resumes don't come from sitting down to "write a resume". They come from:
+
+1. **Brain-dump first** — open [Typeless](https://typeless.app/) (or Obsidian / Bear / Apple Notes / Notion / plain Markdown) and dump everything: every project, decision, win, failure, technology, metric, stakeholder, anecdote, number. Target ~30 pages of raw content. No bullets, no length limits, no resume-style sentences — that constrains your thinking prematurely and causes you to under-recall your best material.
+2. **Run this skill on the dump** — it does the structurization, role-targeted prioritization, and rewriting for you, and outputs the three artifacts above.
+
+If you already have a resume, you can skip step 1 and feed the resume directly — but if the resume feels thin or constrained, doing a brain-dump pass usually surfaces material the polished version was hiding.
+
 ## What makes it different from a generic resume prompt
 
-- **Four-tier diagnosis rubric.** Every resume gets scored 2–3 / 5–6 / 7–8 / 9–10 against US-market interview-rate expectations (~0% / <5% / ~10% / ~20%). The score gates how aggressive the rewrite is.
+- **Accepts unstructured brain-dump as input.** ~30 pages of raw notes from Typeless / Obsidian / Bear works as well as a polished resume — the skill handles structurization, role-targeted prioritization, and rewriting in one pass.
+- **Four-tier diagnosis rubric.** Every input gets scored 2–3 / 5–6 / 7–8 / 9–10 against US-market interview funnel signals (essentially zero / very low / moderate / strong). The score gates how aggressive the rewrite is.
 - **Tier-calibrated output size.** A 9/10 student receives a tight ~4-page handbook that confirms what's working. A 2/3 student receives a 30-page handbook dominated by *经验补强* (experience-building) recommendations rather than line-by-line rewrites, because rewriting weak material does not fix a structural gap.
 - **Live JD scan.** Pulls 2–3 currently-active US job descriptions (mix of Big Tech / mid / startup), extracts repeated keywords, and targets ≥75% coverage in the rewrite.
 - **Fatal-flaw checklist.** Five named failure modes (information density, missing quantification, keyword mismatch, no personal brand, timeline confusion). Every flagged flaw quotes the student's actual bullet — no generic advice.

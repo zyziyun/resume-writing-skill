@@ -1,6 +1,6 @@
 ---
 name: resume-writing
-description: Use this skill whenever a user provides a resume (or raw career materials — experience notes, project descriptions, transcripts, LinkedIn export) and asks for a US-market job-application resume. Triggers include "help me rewrite my resume", "review my CV for SDE / AI / DS / PM / UX / Marketing / TPM / MLE", "make my resume better for [role]", or any upload of a resume PDF / DOCX / MD with intent to apply for US roles. The skill outputs three per-run files: a Markdown resume, a moderncv-banking LaTeX resume, and a personalized teaching handbook calibrated to the student's diagnosis (a 9/10 student gets a thin handbook, a 2/3 student gets a thick one focused on补经验). Do NOT use this skill for cover letters, LinkedIn rewrites, interview-prep materials, or non-US markets — those have their own workflows.
+description: Use this skill whenever a user provides a resume OR raw career materials — experience notes, project descriptions, transcripts, LinkedIn export, or a long unstructured brain-dump from a notes app like Typeless / Obsidian / Bear / Notion / Apple Notes — and asks for a US-market job-application resume. Triggers include "help me rewrite my resume", "structure my brain-dump into a resume", "turn these notes into a resume", "review my CV for SDE / AI / DS / PM / UX / Marketing / TPM / MLE", "make my resume better for [role]", or any upload of a resume or raw career notes (PDF / DOCX / MD) with intent to apply for US roles. The skill outputs three per-run files: a Markdown resume, a moderncv-banking LaTeX resume, and a personalized teaching handbook calibrated to the student's diagnosis (a top-tier student gets a thin handbook, a structurally weak one gets a thick handbook focused on experience-building rather than line-level rewrites). Do NOT use this skill for cover letters, LinkedIn rewrites, interview-prep materials, or non-US markets — those have their own workflows.
 ---
 
 # Resume Writing Skill
@@ -9,11 +9,24 @@ description: Use this skill whenever a user provides a resume (or raw career mat
 
 Trigger this skill when ALL of the following hold:
 
-- User has a resume (or career materials they want turned into one) and wants it reviewed or rewritten.
+- User has a resume, OR a brain-dump of raw career materials (notes, project write-ups, transcripts, LinkedIn export) they want turned into a resume.
 - The target market is the US (default assumption unless user says otherwise).
 - User has named — or can be quickly asked to confirm — a target role direction.
 
 Do NOT invoke for: cover letters, LinkedIn About sections, interview prep, recruiter outreach drafts, or non-US-market resumes.
+
+## Recommended upstream workflow (before invoking this skill)
+
+If the student is starting from scratch — or even if they have a resume but it feels constrained or thin — the strongly recommended pre-step is to brain-dump everything into a low-structure notes tool first:
+
+- Use **Typeless** (or any free-form notes app — Obsidian, Bear, Apple Notes, Notion, plain Markdown files).
+- Target **~30 pages of raw content** before any structuring.
+- No bullets, no formatting rules, no length limits — dump every project, decision, win, failure, technology, metric, stakeholder, anecdote, and number you can recall.
+- Do NOT try to write resume-style sentences during the dump; that prematurely constrains thinking and consistently causes students to under-recall their strongest material while over-including weak material.
+
+This skill is built to take that brain-dump as input and handle structurization, role-targeted prioritization, and rewriting. The "resume" itself is the output of a separate structurize-then-rewrite pass, not the medium in which content is recalled.
+
+When the student arrives with a brain-dump rather than a polished resume, Step 1 of the workflow does an extended intake to extract roles, dates, projects, and technologies before scoring against the rubric.
 
 ## Files in this skill
 
@@ -47,7 +60,12 @@ The handbook is NOT a static methodology document. It uses the student's own Bef
 
 ### Step 1 — Intake & target-role lock
 
-Read whatever the user uploaded. If the resume is unclear about which role direction it's targeting, ask. A typical user actually needs 2–3 versions (primary + backup + generalist); confirm whether they want all of them or just the primary today.
+Read whatever the user uploaded. Two intake paths:
+
+- **Polished resume input** — proceed to diagnosis directly.
+- **Brain-dump input (~30 pages of raw notes, Typeless / Obsidian / etc.)** — do an extended intake first: extract roles, date ranges, projects, technologies, metrics, and stakeholders into a working outline before any rewriting. Flag gaps the dump did not cover (e.g. quantified impact, scope numbers, team size) so the student can fill them before Step 5. The handbook's Part 1 should note "starting from raw materials, not from an existing resume" so the diagnosis is read in that context.
+
+If the role direction is unclear, ask. A typical user actually needs 2–3 versions (primary + backup + generalist); confirm whether they want all of them or just the primary today.
 
 ### Step 2 — JD market scan (web_search)
 
@@ -70,12 +88,14 @@ Build a keyword coverage checklist. Target ≥ 75% coverage in the rewritten res
 
 Score the current draft against the four-tier rubric:
 
-| Tier | Interview rate | Symptoms |
-|------|----------------|----------|
-| 2–3  | ~0%            | Sparse content, no impact data, role direction unclear, won't pass AI screening |
-| 5–6  | < 5%           | Coverage looks complete but no quantification, can't tell complexity or ownership |
-| 7–8  | ~10%           | Quantified and clear, but indistinguishable from peer candidates |
-| 9–10 | ~20%           | Above + a personal-brand differentiator that lands in the recruiter's first 30 seconds |
+| Tier | Interview funnel signal | Symptoms |
+|------|-------------------------|----------|
+| 2–3  | essentially zero        | Sparse content, no impact data, role direction unclear, won't pass AI screening |
+| 5–6  | very low                | Coverage looks complete but no quantification, can't tell complexity or ownership |
+| 7–8  | moderate                | Quantified and clear, but indistinguishable from peer candidates |
+| 9–10 | strong                  | Above + a personal-brand differentiator that lands in the recruiter's first 30 seconds |
+
+These are qualitative coaching heuristics, not measured outcomes — use as relative calibration, not predictive guarantee.
 
 State explicitly: which tier, why, and whether the bottleneck is **structural** (the experience genuinely isn't there yet) or **packaging** (the experience is there but poorly told). These are very different conversations.
 
@@ -209,7 +229,7 @@ If the student wants a backup or generalist version of the resume, run the skill
 
 ## Edge cases
 
-- **User uploads only raw notes, no formal resume yet** — do an extended intake first to extract roles, dates, projects, technologies. Then build from scratch. The handbook still gets generated; Part 1 just notes "starting from raw materials, not from an existing resume".
+- **User uploads only raw notes, no formal resume yet** — this is now a first-class path, not an edge case; see the "Recommended upstream workflow" and Step 1's brain-dump branch above. Build from the dump, flag uncovered gaps before Step 5, and have the student fill them in before finalizing.
 - **User's experience genuinely doesn't match the target role** — be direct in Part 1 (structural gap). Don't paper over with packaging. Recommend specific high-ROI projects in Part 5 (reference 2026 market signals, not stale 2023 project ideas).
 - **User insists on numbers they can't defend** — push back once, explain interview-risk, and if they still want them, mark with `[Needs verification]` so they at least see the flag before submission. Part 5 of the handbook lists every such number.
 - **User has 2+ overlapping roles in the timeline** — never solve this by demoting a role to Projects. Use clear title labels: "Visiting Researcher (Remote, Part-time)", "Concurrent Role", "Consulting Engagement (Part-time)". Note this resolution in the handbook's Part 4 (or Part 2 if the resume isn't being rewritten).
