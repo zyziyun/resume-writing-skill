@@ -1,0 +1,247 @@
+% =============================================================
+%  RESUME TEMPLATE — moderncv banking style
+%  -----------------------------------------------------------
+%  How to use:
+%    1. Replace every [YOUR_xxx] placeholder with your own data.
+%    2. Section structure is ordered by methodology priority:
+%       Summary  →  Experience (or Education-first for new grads)
+%                →  Projects (optional)  →  Skills  →  Education
+%    3. Keep ONE resume per role direction.
+%       File-name your output: LastName_Resume_<Role>.pdf
+%       e.g. Smith_Resume_AIEngineer.pdf
+%    4. Build with:  pdflatex resume.tex
+% =============================================================
+
+\documentclass[11pt,a4paper,sans]{moderncv}
+
+% Theme setup -------------------------------------------------
+\moderncvstyle{banking}
+\moderncvcolor{black}
+
+% Encoding & layout packages ---------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{cmbright}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{ragged2e}
+\usepackage[hidelinks]{hyperref}
+\geometry{top=0.8cm, bottom=0.8cm, left=0.8cm, right=0.8cm}
+
+% Custom helper for project entries (used in Projects section)
+\newcommand{\projectentry}[2]{
+ \vspace{-0.3em}
+ \textbf{#1} \hfill #2\\[-1.0em]
+}
+
+% Layout tweaks ----------------------------------------------
+\setlength{\hintscolumnwidth}{0pt}
+\setlength{\maincolumnwidth}{\textwidth}
+\setlength{\parindent}{0pt}
+
+% =============================================================
+%  PERSONAL INFO
+%  -----------------------------------------------------------
+%  \name takes {FirstName}{LastName}.
+%  Drop any line you don't need (e.g. comment out \homepage if
+%  you don't have a portfolio).
+% =============================================================
+\name{[YOUR_FIRST_NAME]}{[YOUR_LAST_NAME]}
+\phone[mobile]{[YOUR_PHONE]}
+\email{[YOUR_EMAIL]}
+\social[linkedin]{[YOUR_LINKEDIN_HANDLE]}        % e.g. linkedin.com/in/yourname
+\homepage{[YOUR_PORTFOLIO_OR_GITHUB]}             % optional — comment out if none
+\extrainfo{[YOUR_CITY_STATE]}                     % e.g. Seattle, WA
+
+% Itemize styling --------------------------------------------
+\setlist[itemize]{
+ leftmargin=*,
+ label=\textbullet,
+ labelsep=0.5em,
+ itemsep=0.2em,
+ partopsep=0pt,
+ topsep=0.25em,
+ parsep=0.25ex
+}
+
+\begin{document}
+\makecvtitle
+\vspace*{-2em}
+\pagestyle{empty}
+
+% =============================================================
+%  SECTION 1 — SUMMARY  (a.k.a. "What I Do" / "Profile")
+%  -----------------------------------------------------------
+%  1–2 lines, ~25–40 words. Maximum information density.
+%  Anchor to (a) what you do, (b) at what scale / with what proof,
+%  (c) why it matters for THIS target role.
+%
+%  Tip: tailor this paragraph for every role direction.
+%  This is the single most important section after recruiters
+%  scan the top 1/3 of page 1.
+% =============================================================
+\vspace{-0.5em}
+\section{Summary}
+[YOUR_SUMMARY_PARAGRAPH — 1 to 2 lines, role-targeted, tied to a concrete proof point such as a deployed product URL, a measurable outcome, or a senior endorsement.]
+\vspace{-0.6em}
+
+% =============================================================
+%  SECTION 2 — EXPERIENCE
+%  -----------------------------------------------------------
+%  Pack this section. Recruiters value Experience density above
+%  Projects. Anything that has an advisor / team / company /
+%  client behind it belongs here, not in Projects.
+%
+%  Section ordering rules:
+%  - New grad / 0–1 YOE  → Education comes BEFORE Experience.
+%  - 2+ YOE              → Experience comes FIRST (as below).
+%
+%  Optional: split into TWO sections when role-relevant work
+%  would otherwise be buried by chronology, e.g.:
+%    \section{AI Engineering Experience}   % role-direction first
+%    \section{Professional Experience}     % everything else
+%
+%  Bullet-writing checklist:
+%  - Lead with a strong verb (Architected / Shipped / Drove /
+%    Led / Spearheaded / Productionized / Benchmarked / Refactored)
+%  - Avoid weak verbs (Worked / Helped / Used / Participated /
+%    Assisted)
+%  - Limit total intensifier adverbs (Independently / Proactively /
+%    Successfully / End-to-end) to 5 across the WHOLE resume
+%  - Attach each bullet to at least one impact dimension:
+%      Endorsement (who validated / who participated)
+%      Scope       (team size, duration, budget, cross-team)
+%      Marketing   (users, revenue, cost, latency, conversion)
+% =============================================================
+
+\section{Experience}
+
+\textbf{[ROLE_TITLE], [COMPANY], [LOCATION]} \hfill \textbf{[START_DATE] -- [END_DATE]} \\
+\vspace{-1.2em}
+\begin{itemize}
+  \item [STRONG_VERB] [WHAT_YOU_BUILT_OR_OWNED] on [TECH_STACK_OR_CONTEXT], [CONCRETE_DETAIL_THAT_PROVES_DEPTH], [QUANTIFIED_OUTCOME — Endorsement / Scope / Marketing].
+  \item [STRONG_VERB] [SECOND_NOTABLE_DELIVERABLE], [HOW_YOU_DID_IT — name the technique / design choice], [QUANTIFIED_OUTCOME].
+  \item [STRONG_VERB] [THIRD_DELIVERABLE — ideally a different impact dimension from the first two], [SPECIFIC_DETAIL], [QUANTIFIED_OUTCOME].
+  \item [STRONG_VERB] [SCOPE_OR_LEADERSHIP_CONTRIBUTION — mentoring, cross-team alignment, hiring, etc.], [SUPPORTING_DETAIL].
+\end{itemize}
+\vspace{0.5em}
+
+% --- Repeat the role block above for each prior role ---------
+
+\textbf{[ROLE_TITLE], [COMPANY], [LOCATION]} \hfill \textbf{[START_DATE] -- [END_DATE]} \\
+\vspace{-1.2em}
+\begin{itemize}
+  \item [BULLET_1]
+  \item [BULLET_2]
+  \item [BULLET_3]
+\end{itemize}
+\vspace{0.5em}
+
+% Timeline overlap handling:
+% If you held two roles concurrently, do NOT hide one by demoting
+% it to Projects. Use explicit labels in the title line, e.g.:
+%   "Visiting Researcher (Remote, Part-time)"
+%   "Consulting Engagement (Part-time)"
+%   "Concurrent Role"
+% Make timing self-evident — don't make the hiring manager guess.
+
+% =============================================================
+%  SECTION 3 — PROJECTS  (OPTIONAL)
+%  -----------------------------------------------------------
+%  Keep to 2–3 max, only role-relevant ones.
+%  Skip this section ENTIRELY for PM / Marketing / DA / DS-analytics
+%  roles — push everything into Experience instead.
+%  If a project has a deployed URL or an advisor / team behind it,
+%  consider whether it belongs under Experience first.
+%
+%  Uncomment the block below to use it.
+% =============================================================
+
+% \section{Projects}
+%
+% \projectentry{[PROJECT_NAME] — [ONE_LINE_TAGLINE]}{[DATE_RANGE_OR_DEPLOYED_URL]}
+% \begin{itemize}
+%   \item [STRONG_VERB] [WHAT_YOU_BUILT], [TECH_AND_DESIGN_DETAILS], [OUTCOME_OR_VALIDATION].
+%   \item [STRONG_VERB] [TECHNICAL_DEPTH_DETAIL — show production-grade thinking, not toy demo].
+%   \item [STRONG_VERB] [DIFFERENTIATING_DETAIL — eval harness, perf benchmark, scaling result, etc.].
+% \end{itemize}
+% \vspace{0.5em}
+
+% =============================================================
+%  SECTION 4 — TECHNICAL SKILLS
+%  -----------------------------------------------------------
+%  Reorganize the categories per target role. The category that
+%  the JD weights most heavily must come FIRST.
+%
+%  Examples of role-direction-driven ordering:
+%
+%    AI Engineer:
+%      Languages → ML/AI Systems → AI Application → Backend → Cloud → Frontend
+%
+%    Data Scientist:
+%      Languages → Statistics/ML → Experimentation/Causal → Data Tools → Cloud
+%
+%    Product Manager:
+%      (often skip this section; if kept: Tools → Methods → Data Stack)
+%
+%    UX Designer:
+%      Tools (Figma, etc.) → Methods → Research → Frontend basics
+%
+%  Keyword coverage target: ≥ 75% of high-frequency terms from
+%  the 2–3 representative JDs you sampled for this role.
+% =============================================================
+\section{Technical Skills}
+\vspace{-0.2em}
+\noindent\textbf{[CATEGORY_1 — most JD-relevant]}: [comma-separated skill list]\par
+\noindent\textbf{[CATEGORY_2]}: [comma-separated skill list]\par
+\noindent\textbf{[CATEGORY_3]}: [comma-separated skill list]\par
+\noindent\textbf{[CATEGORY_4]}: [comma-separated skill list]\par
+\noindent\textbf{[CATEGORY_5]}: [comma-separated skill list]\par
+\vspace{-0.2em}
+
+% =============================================================
+%  SECTION 5 — EDUCATION
+%  -----------------------------------------------------------
+%  New grads / 0–1 YOE: place this section BEFORE Experience.
+%  2+ YOE: keep it here, near the bottom.
+%
+%  Skip Coursework unless you're a new grad with directly
+%  relevant courses. GPA: include only if ≥ 3.5/4.0 or ≥ 80/100.
+%
+%  Add scholarships, awards, or thesis title only if directly
+%  relevant to the target role.
+% =============================================================
+\section{Education}
+\vspace{-0.2em}
+\textbf{[UNIVERSITY_1]} \hfill {[DATE_RANGE_1]} \\
+\textit{[DEGREE_1 — e.g. M.S. in Computer Science, Specialization: ...]} \\[0.5em]
+
+\textbf{[UNIVERSITY_2]} \hfill {[DATE_RANGE_2]} \\
+\textit{[DEGREE_2]} \\[0.5em]
+
+% \textbf{[UNIVERSITY_3]} \hfill {[DATE_RANGE_3]} \\
+% \textit{[DEGREE_3]} \\
+\vspace{-0.2em}
+
+% =============================================================
+%  OPTIONAL SECTIONS
+%  -----------------------------------------------------------
+%  Add only when role-relevant and the addition strengthens
+%  candidacy. Examples:
+%
+%  \section{Selected Publications}
+%  \section{Patents}
+%  \section{Open Source}
+%  \section{Speaking & Teaching}
+%  \section{Certifications}            % AWS / GCP / PMP / CFA only when relevant
+%  \section{Volunteer Leadership}      % only when it demonstrates Scope/Endorsement
+%
+%  Hard skip — do NOT include:
+%  - Hobbies (unless a senior creative role asks for it)
+%  - References (always "available upon request" implicit)
+%  - Photo (illegal/optional in US; risks bias-screening)
+%  - Date of birth, marital status, nationality (US convention)
+% =============================================================
+
+\end{document}
