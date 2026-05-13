@@ -58,6 +58,6 @@ MIT. See [LICENSE](LICENSE).
 
 ## Author
 
-Built by [Yun Zi](https://github.com/zyziyun) — AI Engineer at Amazon, GenAI curriculum lead at Pilot Technologies / Zhitong Silicon Valley. The methodology behind this skill is the same one used in the curriculum and in 1:1 senior-engineer mentoring sessions.
+Built by [Wendy Yun](https://github.com/zyziyun) — AI Engineer at Amazon, GenAI curriculum lead at Pilot Technologies / Zhitong Silicon Valley. The methodology behind this skill is the same one used in the curriculum and in 1:1 senior-engineer mentoring sessions.
 
 Issues and PRs welcome.
