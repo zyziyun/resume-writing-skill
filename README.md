@@ -67,7 +67,7 @@ Any setup that loads skills from a directory works the same way. Point it at thi
 | Feature | What it does |
 |---|---|
 | **Accepts brain-dump input** | A ~30-page unstructured dump from Typeless / Obsidian / Bear works as well as a polished resume |
-| **Four-tier diagnosis rubric** | Every input is scored 2–3 / 5–6 / 7–8 / 9–10 against US-market funnel signals (essentially zero / very low / moderate / strong) |
+| **Four-tier diagnosis rubric** | Every input is scored 2–3 / 5–6 / 7–8 / 9–10 against US-market interview-rate heuristics (≈ 0% / < 5% / ≈ 10% / ≈ 20%) — coaching-observed, not controlled-study, used to calibrate where you're stuck |
 | **Tier-calibrated output** | A top-tier resume gets a tight ~4-page handbook confirming strengths; a structurally weak resume gets a ~30-page handbook focused on experience-building, not line-level rewrites |
 | **Live JD scan** | Pulls 2–3 currently-active US JDs (Big Tech / mid / startup mix), extracts repeated keywords, targets ≥75% coverage |
 | **Fatal-flaw checklist** | Five named failure modes (info density, missing quantification, keyword mismatch, no personal brand, timeline confusion). Each flagged flaw quotes your actual bullet |

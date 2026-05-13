@@ -91,14 +91,14 @@ Build a keyword coverage checklist. Target ≥ 75% coverage in the rewritten res
 
 Score the current draft against the four-tier rubric:
 
-| Tier | Interview funnel signal | Symptoms |
-|------|-------------------------|----------|
-| 2–3  | essentially zero        | Sparse content, no impact data, role direction unclear, won't pass AI screening |
-| 5–6  | very low                | Coverage looks complete but no quantification, can't tell complexity or ownership |
-| 7–8  | moderate                | Quantified and clear, but indistinguishable from peer candidates |
-| 9–10 | strong                  | Above + a personal-brand differentiator that lands in the recruiter's first 30 seconds |
+| Tier | Interview rate | Symptoms |
+|------|----------------|----------|
+| 2–3  | ≈ 0%           | Sparse content, no impact data, role direction unclear, won't pass AI screening |
+| 5–6  | < 5%           | Coverage looks complete but no quantification, can't tell complexity or ownership |
+| 7–8  | ≈ 10%          | Quantified and clear, but indistinguishable from peer candidates |
+| 9–10 | ≈ 20%          | Above + a personal-brand differentiator that lands in the recruiter's first 30 seconds |
 
-These are qualitative coaching heuristics, not measured outcomes — use as relative calibration, not predictive guarantee.
+These rates are coaching heuristics observed across student submission outcomes, not controlled-study results — use them as relative calibration to identify which tier the resume is stuck at and where to push next, not as predictive guarantees.
 
 State explicitly: which tier, why, and whether the bottleneck is **structural** (the experience genuinely isn't there yet) or **packaging** (the experience is there but poorly told). These are very different conversations.
 

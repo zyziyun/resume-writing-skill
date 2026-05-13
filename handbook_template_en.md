@@ -118,14 +118,14 @@ Length scales with tier:
 
 ### Tier rubric (reference)
 
-| Tier  | Interview funnel signal | Typical symptoms |
-|-------|-------------------------|------------------|
-| 2–3   | essentially zero        | Sparse content; won't clear ATS / AI screening; can't tell what you've done or what direction you're targeting |
-| 5–6   | very low                | Content is complete but no quantified impact; can't tell complexity or ownership |
-| 7–8   | moderate                | Quantified and clear, but indistinguishable from peer candidates |
-| 9–10  | strong                  | Above + a **differentiated personal brand** — a recruiter remembers who you are within 30 seconds |
+| Tier  | Interview rate | Typical symptoms |
+|-------|----------------|------------------|
+| 2–3   | ≈ 0%           | Sparse content; won't clear ATS / AI screening; can't tell what you've done or what direction you're targeting |
+| 5–6   | < 5%           | Content is complete but no quantified impact; can't tell complexity or ownership |
+| 7–8   | ≈ 10%          | Quantified and clear, but indistinguishable from peer candidates |
+| 9–10  | ≈ 20%          | Above + a **differentiated personal brand** — a recruiter remembers who you are within 30 seconds |
 
-These are qualitative coaching heuristics, not measured outcomes — use as relative calibration, not predictive guarantees.
+These rates are coaching heuristics observed across student submission outcomes, not controlled-study results — use them as relative calibration to identify which tier you're stuck at and where to push next, not as predictive guarantees.
 
 ---
 
