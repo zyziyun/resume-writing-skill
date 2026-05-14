@@ -6,8 +6,6 @@ An [Anthropic Claude skill](https://docs.claude.com/en/docs/claude-code/skills) 
 - A moderncv-banking LaTeX resume (compiles with `pdflatex`)
 - A personalized teaching handbook that walks you through the diagnosis, the rewrites, and your next action items — designed to stay useful long after the run
 
-The skill replaces an earlier Next.js + AWS Lambda SaaS at `knflow.com/resume-ai`. Same coaching methodology — packaged so it runs locally inside your own Claude.
-
 ---
 
 ## Why this exists
@@ -99,9 +97,5 @@ Any setup that loads skills from a directory works the same way. Point it at thi
 ## License
 
 MIT. See [LICENSE](LICENSE).
-
-## Author
-
-Built by [Wendy Yun](https://github.com/zyziyun) — AI Engineer at Amazon, GenAI curriculum lead at Pilot Technologies and Zhitong Silicon Valley. The methodology behind this skill is the same one used in the curriculum and in 1:1 senior-engineer mentoring sessions.
 
 Issues and PRs welcome.
